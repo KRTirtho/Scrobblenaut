@@ -54,7 +54,7 @@ class SpaceShip {
 
         handler.next(response);
       }, onError: (error, ErrorInterceptorHandler handler) {
-        if (error.type == DioErrorType.response) {
+        if (error.type == DioExceptionType.badResponse) {
           handler.next(LastFMException.generate(error.response?.data));
         } else {
           handler.next(error);
